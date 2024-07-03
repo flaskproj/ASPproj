@@ -4,7 +4,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
-from flask_mail import Mail, Message
+from flask_mail import Mail
 from config import Config
 
 db = SQLAlchemy()
@@ -24,7 +24,6 @@ def create_app():
     migrate.init_app(app, db)
     login_manager.init_app(app)
     mail.init_app(app)  # Initialize Flask-Mail with your app instance
-
 
     # Register blueprints
     from app.routes.general_routes import general_routes
