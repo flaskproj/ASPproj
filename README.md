@@ -19,7 +19,7 @@ This project is an online store for Apple phones, allowing three types of users:
     ```
 4. Run the application:
     ```sh
-    python run.py
+    python app.py
     ```
 5. Open a web browser and go to `http://127.0.0.1:5000`.
 
