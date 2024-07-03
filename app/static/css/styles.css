@@ -1,0 +1,67 @@
+/* Global styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* Header styles */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    margin-top: -5px;
+}
+
+.navbar-nav .nav-link {
+    color: #333333;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0070c9;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #f0f0f0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #0070c9;
+    border-color: #0070c9;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-outline-primary {
+    color: #0070c9;
+    border-color: #0070c9;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0070c9;
+    color: #ffffff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}

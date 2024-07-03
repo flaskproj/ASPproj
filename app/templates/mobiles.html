@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}Mobiles{% endblock %}
+{% block content %}
+<h1>Available Mobiles</h1>
+<div id="mobile-list" class="row">
+    {% for item in items %}
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-3">
+                <img src="{{ url_for('static', filename='images/' ~ item.image) }}" class="card-img-top img-fluid" alt="{{ item.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ item.price }}</p>
+                    <a href="{{ url_for('customer_routes.buy_item', item_id=item.id) }}" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<style>
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+    .card {
+        height: 100%;
+    }
+</style>
+{% endblock %}

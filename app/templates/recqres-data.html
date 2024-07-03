@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Data with jQuery AJAX</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Items Data</h1>
+        <div id="items-container">
+            <!-- Data will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Use jQuery AJAX to fetch data from Flask route
+            $.ajax({
+                url: '/items/json',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    if (data && data.items) {
+                        // Loop through items and generate HTML dynamically
+                        var itemsHtml = '';
+                        data.items.forEach(function(item) {
+                            itemsHtml += '<div class="item">';
+                            itemsHtml += '<h3>' + item.name + '</h3>';
+                            itemsHtml += '<p>Description: ' + item.description + '</p>';
+                            itemsHtml += '<p>Price: $' + item.price + '</p>';
+                            itemsHtml += '</div>';
+                        });
+                        // Append generated HTML to items-container
+                        $('#items-container').html(itemsHtml);
+                    } else {
+                        $('#items-container').html('<p>No items found.</p>');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error fetching data:', error);
+                    $('#items-container').html('<p>Error fetching data. Please try again later.</p>');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

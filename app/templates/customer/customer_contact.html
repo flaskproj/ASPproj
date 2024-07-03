@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Contact Us</h2>
+    <form action="{{ url_for('customer_routes.customer_contact') }}" method="POST">
+    <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+</div>
+{% endblock %}
