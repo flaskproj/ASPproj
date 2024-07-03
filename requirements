@@ -4,4 +4,3 @@ Flask-WTF
 Flask-SQLAlchemy
 flask_migrate
 flask_login
-gunicorn==20.1.0
