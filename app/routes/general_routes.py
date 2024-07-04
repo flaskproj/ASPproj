@@ -21,7 +21,7 @@ def contact():
 
 @general_routes.route('/logout')
 @login_required
-def customer_logout():
+def logout():
     logout_user()
     flash('You have been logged out.', 'info')
     return redirect(url_for('general_routes.home'))
