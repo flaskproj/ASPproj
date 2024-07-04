@@ -51,3 +51,8 @@ class BuyForm(FlaskForm):
     address = StringField('Address', validators=[DataRequired()])
     submit = SubmitField('Place Order')
 
+
+class EditEmployeeForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    submit = SubmitField('Update')

@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
 {% block content %}
 <h1>Admin Dashboard</h1>
-<p>Welcome, admin!</p>
+<p>Welcome, {{ current_user.username }}!</p>
 {% endblock %}
