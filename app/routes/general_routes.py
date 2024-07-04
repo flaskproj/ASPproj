@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, flash, redirect, url_for
+from flask_login import login_required, logout_user
 
 general_routes = Blueprint('general_routes', __name__)
 
@@ -18,3 +19,9 @@ def contact():
     return render_template('contact.html')
 
 
+@general_routes.route('/logout')
+@login_required
+def customer_logout():
+    logout_user()
+    flash('You have been logged out.', 'info')
+    return redirect(url_for('general_routes.home'))
