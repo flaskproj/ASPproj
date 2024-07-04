@@ -7,11 +7,11 @@ This project is an online store for Apple phones, allowing three types of users:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/apple_store.git
+    git clone https://github.com/flaskproj/ASPproj.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd apple_store
+    cd ASPproj
     ```
 3. Install the required packages:
     ```sh
